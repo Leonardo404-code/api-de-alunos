@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 import { resolve } from 'path';
 
-dotenv.config(); // configurando o dotenv baseando no ".env" criado na raiz do projeto
+dotenv.config();
 
 import './database';
 
@@ -28,7 +28,6 @@ import fotoRoutes from './routes/fotoRoute';
 
 const whiteList = [
   'http://localhost:3000',
-  'http://35.199.110.117',
 ];
 
 const corsOptions = {
@@ -41,15 +40,13 @@ const corsOptions = {
   },
 };
 
-// criando tudo que vai rodar no app
 class App {
   constructor() {
-    this.app = express(); // todo o express será rodado dentro da constante app
-    this.middlewares(); // objeto middlewares
-    this.routes(); // objeto de rotas
+    this.app = express();
+    this.middlewares(); 
+    this.routes();
   }
 
-  // configurando os middlewares para funcioarem corretamente
   middlewares() {
     this.app.use(cors(corsOptions));
     this.app.use(helmet());
@@ -59,7 +56,6 @@ class App {
     this.app.use('/images/', express.static(resolve(__dirname, '..', 'uploads', 'images'))); // Rota das imagens
   }
 
-  // as rotas da api
   routes() {
     this.app.use('/', homeRoute);
     this.app.use('/users/', userRoutes);

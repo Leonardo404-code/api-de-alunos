@@ -1,13 +1,12 @@
 {
-  "name": "api-rest",
+  "name": "api-alunos",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/server.js",
     "build": "sucrase ./src -d ./dist --transforms imports",
-    "start": "node dist/server.js"
+    "start": "nodemon ./src/server.js"
   },
   "author": "",
   "license": "ISC",
