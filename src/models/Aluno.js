@@ -1,10 +1,9 @@
 // configurando como os dados serão tratados dentro do banco de dados
 import Sequelize, { Model } from 'sequelize'; // importando o sequelize e model para trasferir tudo daqui para o BD
 
-// criando a classe Aluno e tudo que ele irá conter, todos os campos de preenchimento
-export default class Aluno extends Model { // precisa extende de Model para pegar tipos primitivos
-  static init(sequelize) { // inicializando com sequelize staticamente para fazer a transferencia
-    super.init({ // especificando os tipos dos campos
+export default class Aluno extends Model { 
+  static init(sequelize) { 
+    super.init({ 
       nome: {
         type: Sequelize.STRING,
         defaultValue: '',
@@ -67,7 +66,7 @@ export default class Aluno extends Model { // precisa extende de Model para pega
     }, {
       sequelize,
     });
-    return this; // this significa "isto tudo" neste contexto
+    return this;
   }
 
   static associate(models) {

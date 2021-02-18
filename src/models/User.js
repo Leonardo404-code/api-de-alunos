@@ -1,5 +1,4 @@
-// Configurando os usuários em si
-import Sequelize, { Model } from 'sequelize'; // importando todo Sequelize e model da biblioteca
+import Sequelize, { Model } from 'sequelize'; 
 import bcryptjs from 'bcryptjs';
 
 export default class User extends Model {

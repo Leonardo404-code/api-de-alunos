@@ -33,7 +33,7 @@ export default class Foto extends Model {
       sequelize,
       tableName: 'fotos',
     });
-    return this; // this significa "isto tudo" neste contexto
+    return this;
   }
 
   static associate(models) {
